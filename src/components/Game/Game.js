@@ -11,15 +11,15 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [guessResults, setGuessResults] = React.useState([]);
+  const [guesses, setGuesses] = React.useState([]);
 
   function handleGuess(guess) {
-    setGuessResults([...guessResults, guess]);
+    setGuesses([...guesses, guess]);
   }
 
   return (
     <>
-      <GuessResults guessResults={guessResults} />
+      <GuessResults guesses={guesses} answer={answer} />
       <GuessInput handleGuess={handleGuess} />
     </>
   );
