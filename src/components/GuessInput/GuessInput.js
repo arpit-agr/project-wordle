@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ handleGuess }) {
+function GuessInput({ handleGuess, isGameOver }) {
   const [guess, setGuess] = React.useState("");
 
   function handleSubmit(event) {
@@ -27,6 +27,7 @@ function GuessInput({ handleGuess }) {
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
         maxLength={5}
+        disabled={isGameOver}
       />
     </form>
   );
